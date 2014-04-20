@@ -1,0 +1,98 @@
+$red: red;
+$blue: blue;
+$green: green;
+$yellow: yellow;
+
+$radius: .5rem;
+
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}
+
+@mixin box-color($color) {
+	background-color: $color;
+	
+	&.blink {
+		box-shadow: $color 0 0 40px;
+		background-color: lighten($color, 5%);
+	}
+}
+
+@mixin small() {
+	@media screen and (max-width: 490px) {
+		@content;
+	}
+}
+
+/////////////////
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: black;
+}
+
+button {
+	display: block;
+	margin: 1rem auto;
+	width: 5rem;
+	height: 2rem;
+	background-color: violet;
+	border-radius: $radius;
+	border: none;
+	outline: none;
+	color: black;
+	
+	&[disabled] {
+		opacity: .5;
+	}
+}
+
+.field {
+	@include square(432px);
+	margin: 3rem auto;
+	background-color: lighten(black, 15%);
+	border-radius: $radius;
+	
+	@include small {
+		@include square(216px);
+	}
+}
+
+.box {
+	@include square(200px);
+	float: left;
+	margin: .5rem;
+	border-radius: $radius;
+	
+	@include small {
+		@include square(92px);
+	}
+}
+
+.red {
+	@include box-color($red);
+}
+
+.yellow {
+	@include box-color($yellow);
+}
+
+.green {
+	@include box-color($green);
+}
+
+.blue {
+	@include box-color($blue);
+}

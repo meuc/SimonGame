@@ -1,0 +1,90 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
+
+button {
+  display: block;
+  margin: 1rem auto;
+  width: 5rem;
+  height: 2rem;
+  background-color: violet;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  color: black;
+}
+button[disabled] {
+  opacity: .5;
+}
+
+.field {
+  width: 432px;
+  height: 432px;
+  margin: 3rem auto;
+  background-color: #262626;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 490px) {
+  .field {
+    width: 216px;
+    height: 216px;
+  }
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: .5rem;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 490px) {
+  .box {
+    width: 92px;
+    height: 92px;
+  }
+}
+
+.red {
+  background-color: red;
+}
+.red.blink {
+  box-shadow: red 0 0 40px;
+  background-color: #ff1a1a;
+}
+
+.yellow {
+  background-color: yellow;
+}
+.yellow.blink {
+  box-shadow: yellow 0 0 40px;
+  background-color: #ffff1a;
+}
+
+.green {
+  background-color: green;
+}
+.green.blink {
+  box-shadow: green 0 0 40px;
+  background-color: #009a00;
+}
+
+.blue {
+  background-color: blue;
+}
+.blue.blink {
+  box-shadow: blue 0 0 40px;
+  background-color: #1a1aff;
+}
